@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="Slide2CollectionViewItem">
+            <connections>
+                <outlet property="imgView" destination="PHx-5q-lTv" id="JlF-hM-T4k"/>
+                <outlet property="ipLabel" destination="paa-g8-to8" id="vJe-xU-DSF"/>
+                <outlet property="priceAgainBtn" destination="KHo-SJ-KN1" id="fBr-ww-5se"/>
+                <outlet property="refreshBtn" destination="pB1-ot-rwg" id="fzK-CX-1wE"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="216"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PHx-5q-lTv">
+                    <rect key="frame" x="0.0" y="76" width="257" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="r6A-tY-mCx"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CiJ-NY-sFU"/>
+                </imageView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pB1-ot-rwg">
+                    <rect key="frame" x="0.0" y="35" width="257" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Zc8-yK-6Dd"/>
+                    </constraints>
+                    <buttonCell key="cell" type="squareTextured" title="刷新" bezelStyle="texturedSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vxn-ek-sAO">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="17"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="refreshPrice:" target="-2" id="Bxg-1X-W5t"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KHo-SJ-KN1">
+                    <rect key="frame" x="0.0" y="-2" width="257" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="TVM-i4-e17"/>
+                    </constraints>
+                    <buttonCell key="cell" type="squareTextured" title="出首次价" bezelStyle="texturedSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aTY-95-n8q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="17"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="priceAgain:" target="-2" id="unf-7J-XPj"/>
+                    </connections>
+                </button>
+                <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-GA-roC">
+                    <rect key="frame" x="-3" y="182" width="263" height="36"/>
+                    <view key="contentView" id="IWb-l3-j6p">
+                        <rect key="frame" x="2" y="2" width="259" height="32"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="paa-g8-to8">
+                                <rect key="frame" x="8" y="7" width="124" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="F1J-J8-RMA"/>
+                                    <constraint firstAttribute="height" constant="17" id="J5Y-Mk-01c"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="eSu-kg-ZA4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="paa-g8-to8" firstAttribute="leading" secondItem="IWb-l3-j6p" secondAttribute="leading" constant="10" id="uWG-8g-PzW"/>
+                            <constraint firstItem="paa-g8-to8" firstAttribute="centerY" secondItem="IWb-l3-j6p" secondAttribute="centerY" id="yf7-7Y-z76"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="H8T-Ng-9Ue"/>
+                    </constraints>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cdy-GA-roC" secondAttribute="trailing" id="IOH-sE-aug"/>
+                <constraint firstItem="KHo-SJ-KN1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="LDg-Ff-WwC"/>
+                <constraint firstAttribute="trailing" secondItem="PHx-5q-lTv" secondAttribute="trailing" id="LEs-XB-czC"/>
+                <constraint firstItem="KHo-SJ-KN1" firstAttribute="top" secondItem="pB1-ot-rwg" secondAttribute="bottom" constant="3" id="QVG-ZX-m5c"/>
+                <constraint firstAttribute="trailing" secondItem="pB1-ot-rwg" secondAttribute="trailing" id="Rmy-Yg-Iki"/>
+                <constraint firstAttribute="trailing" secondItem="KHo-SJ-KN1" secondAttribute="trailing" id="Sec-Qm-h1S"/>
+                <constraint firstItem="cdy-GA-roC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="V0i-LN-dQg"/>
+                <constraint firstItem="pB1-ot-rwg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="giS-Js-gyD"/>
+                <constraint firstItem="PHx-5q-lTv" firstAttribute="top" secondItem="cdy-GA-roC" secondAttribute="bottom" id="gq8-6U-bPD"/>
+                <constraint firstItem="PHx-5q-lTv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="qVp-gm-QjM"/>
+                <constraint firstItem="cdy-GA-roC" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="rJ3-ik-WrM"/>
+                <constraint firstAttribute="bottom" secondItem="KHo-SJ-KN1" secondAttribute="bottom" id="tm2-MD-wnW"/>
+            </constraints>
+            <point key="canvasLocation" x="27.5" y="141"/>
+        </customView>
+    </objects>
+</document>
